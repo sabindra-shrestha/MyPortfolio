@@ -1,10 +1,6 @@
 # MyPortfolio
 Full-stack personal portfolio website built with Java Spring Boot, Angular, PostgreSQL, and AWS.
 
-# My Portfolio
-
-A full-stack personal portfolio website showcasing my projects and skills.
-
 ## Tech Stack
 
 **Backend:** Java 21, Spring Boot, Spring Security, JWT, PostgreSQL, Apache Kafka  
