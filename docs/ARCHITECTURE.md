@@ -5,7 +5,7 @@ Monolithic Spring Boot backend with Angular frontend,
 PostgreSQL database, and Apache Kafka for event-driven features.
 
 ## Tech Stack
-- **Backend:** Java 21, Spring Boot 3, Spring Security, JWT
+- **Backend:** Java 17, Spring Boot 3, Spring Security, JWT
 - **Database:** PostgreSQL (AWS RDS)
 - **Message Broker:** Apache Kafka
 - **Frontend:** Angular 17, Angular Material, RxJS
