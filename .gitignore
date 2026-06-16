@@ -1,16 +1,16 @@
-# Compiled class file
+# ===========================
+# macOS
+# ===========================
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# ===========================
+# Java / Maven / Spring Boot
+# ===========================
 *.class
-
-# Log file
 *.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,9 +18,44 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+target/
+.mvn/
 hs_err_pid*
 replay_pid*
-.DS_Store
-**.DS_Store
+
+# ===========================
+# IDE Files
+# ===========================
+.idea/
+*.iml
+*.iws
+.vscode/
+*.swp
+*.swo
+
+# ===========================
+# Node / Angular (for later)
+# ===========================
+node_modules/
+dist/
+.angular/
+npm-debug.log*
+
+# ===========================
+# Environment & Secrets (CRITICAL)
+# ===========================
+.env
+.env.local
+.env.production
+application-local.properties
+application-secret.properties
+
+# ===========================
+# Docker (for later)
+# ===========================
+.docker/
+
+# ===========================
+# AWS (for later)
+# ===========================
+.aws/
