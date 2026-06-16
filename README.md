@@ -12,7 +12,7 @@ Full-stack personal portfolio website built with Java Spring Boot, Angular, Post
 
 ## Author
 
-Your Name — [GitHub](https://github.com/sabindra-shrestha/MyPortfolio)
+Sabindra Shrestha — [GitHub](https://github.com/sabindra-shrestha/MyPortfolio)
 
 # Getting Started
 Creating the required folder to setup the code and making doc folder ready for the record.
