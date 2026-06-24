@@ -30,8 +30,8 @@ public class Skill {
     @NotBlank(message = "Category is required")
     private String category;
 
-    @Min(1) @Max(5)
-    private String proficiencyLevel;
+    @Column(name = "proficiency_level")
+    private Integer proficiencyLevel;
 
     private String iconUrl;
 }

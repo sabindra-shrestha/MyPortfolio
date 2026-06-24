@@ -7,7 +7,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.parameters.P;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +22,7 @@ public class ProjectController {
 
 
     private final ProjectService projectService;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @GetMapping
     public ResponseEntity<List<Project>> getAllProjects(){
@@ -41,6 +42,11 @@ public class ProjectController {
     @PostMapping
     public ResponseEntity<Project> createProject(@Valid @RequestBody Project project){
         Project created = projectService.createProject(project);
+
+        //created kafka project-event
+        String messsage = "New project added: " + created.getTitle();
+        kafkaTemplate.send("project-events", messsage);
+
         return ResponseEntity.status(HttpStatus.CREATED).body(created);
     }
 
