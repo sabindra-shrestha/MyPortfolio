@@ -34,7 +34,7 @@ public class ProjectController {
         return ResponseEntity.ok(projectService.getProjectById(id));
     }
 
-    @GetMapping("/feature")
+    @GetMapping("/featured")
     public ResponseEntity<List<Project>> getFeaturedProjects(){
         return ResponseEntity.ok(projectService.getFeaturedProjects());
     }

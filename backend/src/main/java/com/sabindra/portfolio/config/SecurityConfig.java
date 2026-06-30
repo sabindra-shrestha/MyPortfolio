@@ -2,12 +2,10 @@ package com.sabindra.portfolio.config;
 
 
 import lombok.RequiredArgsConstructor;
-import org.apache.kafka.common.config.types.Password;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -69,8 +67,10 @@ public class SecurityConfig {
     }
 
     //Angular app will run on localhost:4200, Spring Boot on localhost:8080 -- different ports count as "different origins"
+
     //This config explicitly tells the browser -- request from port 4200, using these http methods, with any headers, are allowed.
-    private CorsConfigurationSource corsConfigurationSource() {
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("http://localhost:4200"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
