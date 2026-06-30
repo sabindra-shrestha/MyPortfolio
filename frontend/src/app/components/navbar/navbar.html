@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span class="logo">&</span>
+
+  <span class="spacer"></span>
+
+  <a mat-button routerLink="/" routerLinkActive="active-link">Home</a>
+  <a mat-button routerLink="/about" routerLinkActive="active-link">About</a>
+  <a mat-button routerLink="/projects" routerLinkActive="active-link">Projects</a>
+  <a mat-button routerLink="/blog" routerLinkActive="active-link">Blog</a>
+  <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact</a>
+
+  <button mat-icon-button (click)="toggleTheme()">
+    <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
+</mat-toolbar>

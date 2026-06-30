@@ -1,0 +1,19 @@
+
+<section class = "blog-page">
+  <h2>Blog</h2>
+
+  <div *ngIf="loading">Loading projects...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div +ngIf="!loading && !errorMessage">
+    <article *ngFor="let post of blogs" class="blog-post">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.content }}</p>
+    </article>
+
+    <div *ngIf="blogs.length === 0">
+      No blog yet — check back soon!
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,42 @@
+<section class="contact-page">
+  <h1>Contact Me</h1>
+
+  <div *ngIf="submitted" class="success">
+    Thanks for reaching out! I'll get back to you soon.
+  </div>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+    <label>
+      Name
+      <input type="text" formControlName="name" />
+    </label>
+    <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="field-error">
+      Name is required.
+    </div>
+
+    <label>
+      Email
+      <input type="email" formControlName="email" />
+    </label>
+    <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="field-error">
+      Valid email is required.
+    </div>
+
+    <label>
+      Subject
+      <input type="text" formControlName="subject" />
+    </label>
+
+    <label>
+      Message
+      <textarea formControlName="message" rows="5"></textarea>
+    </label>
+    <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="field-error">
+      Message is required.
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+  </form>
+</section>

@@ -1,0 +1,17 @@
+<section class = "about-page">
+  <h1> About Me</h1>
+  <p>
+    I'm a backend-focused developer building full-stack applications with Java, Spring Boot, and Angular.
+    This Portfolio itself is a project I built from scratch to learn Production-grade Architecture.
+  </p>
+
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div *ngFor="let group of skills" class="skill-group">
+      <h3>{{ group.category }}</h3>
+      <ul>
+        <li *ngFor="let skill of group.items">{{ skill }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

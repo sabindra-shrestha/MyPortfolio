@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
+    ],
+  templateUrl: './navbar.html',
+  styleUrl: './navbar.scss',
+})
+export class NavbarComponent {
+    isDarkMode = false;
+
+   toggleTheme(): void{
+     this.isDarkMode = !this.isDarkMode;
+     document.body.classList.toggle('dark-theme', this.isDarkMode);
+     }
+
+  }
